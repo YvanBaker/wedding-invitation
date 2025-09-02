@@ -57,13 +57,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 #f8f5f0 100%)
         `;
     };
-    
+
+    fetch("http://27.223.13.138:9999/wx-signature/wx-signature?url=" + encodeURIComponent(location.href.split('#')[0]))
+        .then(res => res.json())
+        .then(cfg => {
+            wx.config({
+                debug: false,
+                appId: cfg.appId,
+                timestamp: cfg.timestamp,
+                nonceStr: cfg.nonceStr,
+                signature: cfg.signature,
+                jsApiList: [
+                    "updateAppMessageShareData",
+                    "updateTimelineShareData",
+                ]
+            })
+        })
+    console.log('wx: ', wx)
     // 微信分享配置（需要微信JS-SDK）
     if (typeof wx !== 'undefined') {
         wx.ready(function() {
             const shareData = {
                 title: '杨峰 ♥ 李钰 | 我们的婚礼',
-                desc: '诚邀您见证我们在云端上海柏悦酒店的爱情盛典 💕',
+                desc: '诚邀您见证我们在沂水蓝海国际大饭店的爱情盛典 💕',
                 link: window.location.href,
                 imgUrl: window.location.origin + '/images/share-cover.jpg'
             };
