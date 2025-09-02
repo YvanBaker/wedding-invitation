@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 图片懒加载和错误处理
-    const coupleImages = document.querySelectorAll('.couple-image');
+    const coupleImages = document.querySelectorAll('.couple-images');
     
     coupleImages.forEach(img => {
         // 添加加载占位
