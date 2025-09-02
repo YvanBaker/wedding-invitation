@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(cfg => {
             wx.config({
                 debug: false,
-                appId: cfg.appId,
-                timestamp: cfg.timestamp,
-                nonceStr: cfg.nonceStr,
-                signature: cfg.signature,
+                appId: "wx430f78a41874f551",
+                timestamp: "1756799536",
+                nonceStr: "d0944ce9a2114f95815efe3e27bbceee",
+                signature: "ed1412819c2e8d7d788dd93c7b038c257cbb3d24",
                 jsApiList: [
                     "updateAppMessageShareData",
                     "updateTimelineShareData",
