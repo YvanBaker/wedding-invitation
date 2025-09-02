@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     };
 
-    fetch("http://27.223.13.138:9999/wx-signature/wx-signature?url=" + encodeURIComponent(location.href.split('#')[0]))
+    fetch("https://27.223.13.138:9999/wx-signature/wx-signature?url=" + encodeURIComponent(location.href.split('#')[0]))
         .then(res => res.json())
         .then(cfg => {
             wx.config({
