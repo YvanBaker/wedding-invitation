@@ -58,21 +58,32 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     };
 
-    fetch("https://27.223.13.138:9999/wx-signature/wx-signature?url=" + encodeURIComponent(location.href.split('#')[0]))
-        .then(res => res.json())
-        .then(cfg => {
-            wx.config({
-                debug: false,
-                appId: "wx430f78a41874f551",
-                timestamp: "1756799536",
-                nonceStr: "d0944ce9a2114f95815efe3e27bbceee",
-                signature: "ed1412819c2e8d7d788dd93c7b038c257cbb3d24",
-                jsApiList: [
-                    "updateAppMessageShareData",
-                    "updateTimelineShareData",
-                ]
-            })
-        })
+    // fetch("https://27.223.13.138:9999/wx-signature/wx-signature?url=" + encodeURIComponent(location.href.split('#')[0]))
+    //     .then(res => res.json())
+    //     .then(cfg => {
+    //         wx.config({
+    //             debug: false,
+    //             appId: "wx430f78a41874f551",
+    //             timestamp: "1756799536",
+    //             nonceStr: "d0944ce9a2114f95815efe3e27bbceee",
+    //             signature: "ed1412819c2e8d7d788dd93c7b038c257cbb3d24",
+    //             jsApiList: [
+    //                 "updateAppMessageShareData",
+    //                 "updateTimelineShareData",
+    //             ]
+    //         })
+    //     })
+    wx.config({
+        debug: false,
+        appId: "wx430f78a41874f551",
+        timestamp: "1756799536",
+        nonceStr: "d0944ce9a2114f95815efe3e27bbceee",
+        signature: "ed1412819c2e8d7d788dd93c7b038c257cbb3d24",
+        jsApiList: [
+            "updateAppMessageShareData",
+            "updateTimelineShareData",
+        ]
+    })
     console.log('wx: ', wx)
     // 微信分享配置（需要微信JS-SDK）
     if (typeof wx !== 'undefined') {
